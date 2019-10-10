@@ -24,13 +24,13 @@ class HomePage extends StatelessWidget {
     initialData: [],
     builder: ( context, AsyncSnapshot<List<dynamic>> snapshot) {
           return ListView(
-        children: _listaItems(snapshot.data),
+        children: _listaItems(snapshot.data, context),
         );
       },
     );
   }
 
-  List<Widget> _listaItems(List<dynamic> data) {
+  List<Widget> _listaItems(List<dynamic> data, BuildContext context) {
     final List<Widget> opciones = [];
 
     data.forEach((opt) {
@@ -39,7 +39,13 @@ class HomePage extends StatelessWidget {
         leading: getIcon(opt['icon']),
         trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
         onTap: () {
+        /*
+          final route = MaterialPageRoute(
+            builder: (context) => AlertPage()
+          );
 
+          Navigator.push(context, route); */
+          Navigator.pushNamed(context, opt['ruta']);
         }
       );
 

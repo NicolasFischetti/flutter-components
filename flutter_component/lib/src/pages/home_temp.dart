@@ -16,6 +16,7 @@ class HomePageTem extends StatelessWidget {
     );
   }
 
+/*
   List<Widget> _crearItems() {
 
     List<Widget> lista = new List<Widget>();
@@ -30,7 +31,7 @@ class HomePageTem extends StatelessWidget {
     }
 
     return lista;
-  }
+  } */
 
   List<Widget> _crearItemsCorta() {
     return opciones.map((item) {
